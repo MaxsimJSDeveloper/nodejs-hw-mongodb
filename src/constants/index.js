@@ -1,4 +1,7 @@
 import { env } from '../utils/env.js';
+import path from 'node:path';
+
+export const TEMPLATES_DIR = path.join(process.cwd(), 'src', 'templates');
 
 export const SORT_ORDER = {
   ASC: 'asc',
