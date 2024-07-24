@@ -2,15 +2,13 @@ import { ContactsCollection } from '../../src/db/models/contacts.js';
 import { SORT_ORDER } from '../constants/index.js';
 import { calculatePaginationData } from '../utils/calculatePaginationData.js';
 
-// src/services/contacts.js
-
 export const getAllContacts = async ({
   page = 1,
   perPage = 10,
   sortOrder = SORT_ORDER.ASC,
   sortBy = '_id',
   filter = {},
-  userId, // Добавить userId
+  userId,
 }) => {
   const limit = perPage;
   const skip = (page - 1) * perPage;
@@ -78,12 +76,10 @@ export const updateContact = async (
   };
 };
 
-// src/services/contacts.js
-
 export const createContact = async (payload) => {
   const contact = new ContactsCollection({
     ...payload,
-    userId: payload.userId, // Добавить userId
+    userId: payload.userId,
   });
   await contact.save();
   return contact;
