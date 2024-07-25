@@ -19,5 +19,11 @@ export const SMTP = {
   SMTP_FROM: env('SMTP_FROM'),
 };
 
+export const CLOUDINARY = {
+  CLOUD_NAME: env('CLOUD_NAME'),
+  API_KEY: env('API_KEY'),
+  API_SECRET: env('API_SECRET'),
+};
+
 export const TEMP_UPLOAD_DIR = path.join(process.cwd(), 'temp');
 export const UPLOAD_DIR = path.join(process.cwd(), 'uploads');
